@@ -41,20 +41,19 @@ copy .env.example .env
 
 ## Uso
 
-### Indexar documentos (una sola vez)
+### 🖥️ Interfaz Web (recomendado para abogados)
 
 ```powershell
-# Primera vez: indexa toda la carpeta
-python ingestion_pipeline.py --input "C:\Users\Usuario\Documentos\Legales"
-
-# Despues: solo indexa archivos nuevos
-python ingestion_pipeline.py --input "C:\Users\Usuario\Documentos\Legales" --incremental
-
-# Reconstruir desde cero
-python ingestion_pipeline.py --input "C:\Users\Usuario\Documentos\Legales" --reset
+pip install streamlit
+streamlit run app.py
+# Se abre en http://localhost:8501
 ```
 
-### Consultar documentos
+**O doble-click en `RAG-Legal.bat`** (acceso directo al escritorio).
+
+La interfaz web incluye: busqueda, filtros, fuentes clickeables, subida de documentos.
+
+### ⌨️ Terminal
 
 ```powershell
 # Pregunta unica
@@ -62,9 +61,6 @@ python query_pipeline.py "cual es el plazo de apelacion?"
 
 # Modo interactivo
 python query_pipeline.py --interactive
-
-# Salida JSON
-python query_pipeline.py "plazo de prescripcion" --json
 ```
 
 ## Requisitos
