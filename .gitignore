@@ -1,0 +1,11 @@
+# Ignorar datos y logs
+data/
+logs/
+*.db
+
+# Ignorar API keys
+.env
+
+# Python
+__pycache__/
+*.pyc
